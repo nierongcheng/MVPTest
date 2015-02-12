@@ -1,2 +1,2 @@
 # MVPTest
-This project just for test MVP frame, it according to Android-CleanArchitecture-master.
+This project just for testing MVP architecture, it according to Android-CleanArchitecture-master.
