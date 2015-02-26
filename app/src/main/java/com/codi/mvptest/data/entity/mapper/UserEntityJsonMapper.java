@@ -24,7 +24,7 @@ public class UserEntityJsonMapper {
         return this.mGson.fromJson(userJsonResponse, userEntityType);
     }
 
-    public Collection<UserEntity> transformEntityCollection(String userListJsonResponse) {
+    public Collection<UserEntity> transformUserEntityCollection(String userListJsonResponse) {
 
         Type listOfUserEntityType = new TypeToken<Collection<UserEntity>>() {}.getType();
         return this.mGson.fromJson(userListJsonResponse, listOfUserEntityType);

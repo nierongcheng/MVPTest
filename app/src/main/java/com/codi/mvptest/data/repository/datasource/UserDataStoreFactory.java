@@ -3,6 +3,9 @@ package com.codi.mvptest.data.repository.datasource;
 import android.content.Context;
 
 import com.codi.mvptest.data.cache.UserCache;
+import com.codi.mvptest.data.entity.mapper.UserEntityJsonMapper;
+import com.codi.mvptest.data.net.RestApi;
+import com.codi.mvptest.data.net.RestApiImpl;
 
 /**
  * Created by Codi on 2015/2/12.
@@ -35,7 +38,8 @@ public class UserDataStoreFactory {
     }
 
     private UserDataStore createCloudDataStore() {
-
-        return null;
+        UserEntityJsonMapper userEntityJsonMapper = new UserEntityJsonMapper();
+        RestApi restApi = new RestApiImpl(this.mContext, userEntityJsonMapper);
+        return new CloudUserDataStore(restApi, mUserCache);
     }
 }
